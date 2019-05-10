@@ -1,7 +1,7 @@
 {
   "name": "CARTO ZD Test",
   "author": "Zendesk & CARTO",
-  "version": "1.5.2",
+  "version": "0.0.1",
   "api_version": 1,
   "default_locale": "en-us",
   "settings": [{
