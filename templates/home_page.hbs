@@ -1,7 +1,37 @@
 <div class="container">
-  <section class="section activity">
-    {{#if settings.show_recent_activity}}
-      {{recent_activity}}
-    {{/if}}
+  <section>
+    <h1>CARTO Support Center</h1>
+    <p>Please sign-in to get access to <a href="/hc/en-us/requests">your cases</a>.</p>
   </section>
 </div>
+
+<script>
+  function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+      begin = dc.indexOf(prefix);
+      if (begin != 0) return null;
+    }
+    else {
+      begin += 2;
+      var end = document.cookie.indexOf(";", begin);
+      if (end == -1) {
+        end = dc.length;
+      }
+    }
+    // because unescape has been deprecated, replaced with decodeURI
+    //return unescape(dc.substring(begin + prefix.length, end));
+    return decodeURI(dc.substring(begin + prefix.length, end));
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const cookie = getCookie('_zendesk_authenticated');
+
+    if (cookie) {
+      console.log(cookie);
+      console.log('authenticated!')
+    }
+  });
+</script>
